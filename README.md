@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# React 18 - Stricter Strict Mode
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is that?
 
-## Available Scripts
+If you've recently started a new react app, you might have noticed that useEffect was called twice when your component was mounted, even though you use the empty square brackets.
 
-In the project directory, you can run:
+It is because React 18 introduces a new development-only check to Strict Mode. This new check will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the revious state on the second mount.
 
-### `npm start`
+React will automatically unmount and remount every component, whenever a component mounts for the first time, restoring the previous state on the second mount. If this breaks your app, consider removing Strict Mode until you can fix the components to be resilient to remounting with existing state.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to handle?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+There are three possibilities to handle this behaviour using the useEffect cleanup, which are:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### #1 - Using useEffect clanup to undo what you do:
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### #2 - Using useEffect clanup to ignore the first call's result:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### #3 - Using useEffect clanup to ignore the first call:
 
-### `npm run eject`
+## Examples
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To see the examples working you only need to run the app using `npm start`, then go to project page at [http://localhost:3000](http://localhost:3000) and then choose one example that you want to see.. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### More details:
+* [React 18 - Breaking Changes](https://github.com/facebook/react/blob/main/CHANGELOG.md#react-1)
+* [React 18 - Changelog](https://github.com/facebook/react/blob/main/CHANGELOG.md#1800-march-29-2022)
