@@ -13,13 +13,13 @@ React will automatically unmount and remount every component, whenever a compone
 There are three possibilities to handle this behaviour using the useEffect cleanup, which are:
 
 
-### #1 - Using useEffect clanup to undo what you do:
+### #1 - Using useEffect cleanup to undo what you do:
 
 
-### #2 - Using useEffect clanup to ignore the first call's result:
+### #2 - Using useEffect cleanup to ignore the first call's result:
 
 
-### #3 - Using useEffect clanup to ignore the first call:
+### #3 - Using useEffect cleanup to ignore the first call:
 
 ## Examples
 
