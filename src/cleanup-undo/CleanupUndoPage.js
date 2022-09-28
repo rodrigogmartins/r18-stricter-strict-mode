@@ -1,5 +1,3 @@
-import './CleanupUndoPage.css';
-
 import { useEffect } from "react";
 
 export function CleanupUndoPage() {
@@ -74,29 +72,35 @@ useEffect(() => {
 
   return (
     <>
-      Wrong side
-      <div className="results-container">
-      <div className="code-box">
-        <pre>{wrongSideCode.trim()}</pre>
-      </div>
+      <div className="container">
+        <div className="box-title">#1 - Using useEffect cleanup to undo what you did</div>
+        
+        <div className="box-title">Wrong way</div>
+        <div className="results-container">
+          <div className="code-box">
+            <pre>{wrongSideCode.trim()}</pre>
+          </div>
 
-        <div className="result-box">
-          <button id="button-to-click-a-side">Click-me</button>
-          <div id="content-a-side"></div>
+          <div className="result-box">
+            <button id="button-to-click-a-side">Click-me</button>
+            <div id="content-a-side"></div>
+          </div>
+        </div>
+        
+        <div className="box-title">Right way</div>
+        <div className="results-container">
+          <div className="code-box">
+            <pre>{rightSideCode.trim()}</pre>
+          </div>
+
+          <div className="result-box">
+            <button id="button-to-click-b-side">Click-me</button>
+            <div id="content-b-side"></div>
+          </div>
         </div>
       </div>
 
-      Right side
-      <div className="results-container">
-        <div className="code-box">
-          <pre>{rightSideCode.trim()}</pre>
-        </div>
-
-        <div className="result-box">
-          <button id="button-to-click-b-side">Click-me</button>
-          <div id="content-b-side"></div>
-        </div>
-      </div>
+      <hr />
     </>
   );
 }
