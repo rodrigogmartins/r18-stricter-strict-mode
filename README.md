@@ -74,7 +74,7 @@ useEffect(() => {
 
 ## Examples
 
-To see the examples working you only need to run the app using `npm start`, then go to project page at [http://localhost:3000](http://localhost:3000) and then choose one example that you want to see.. 
+To see the examples working you only need to run the app using `npm start` and then go to project page at [http://localhost:3000](http://localhost:3000) 
 
 
 #### More details:
