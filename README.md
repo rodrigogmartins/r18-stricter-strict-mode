@@ -1,6 +1,20 @@
 # React 18 - Stricter Strict Mode
 
-## What is that?
+## What is Strict Mode? 
+
+StrictMode is a tool for highlighting potential problems in an application. Like Fragment, StrictMode does not render any visible UI. It activates additional checks and warnings for its descendants.
+
+StrictMode currently helps with:
+
+* Identifying components with unsafe lifecycles
+* Warning about legacy string ref API usage
+* Warning about deprecated findDOMNode usage
+* Detecting unexpected side effects
+* Detecting legacy context API
+* Ensuring reusable state
+
+
+## What is Stricter Strict Mode?
 
 If you've recently started a new react app, you might have noticed that useEffect was called twice when your component was mounted, even though you use the empty square brackets.
 
@@ -64,5 +78,6 @@ To see the examples working you only need to run the app using `npm start`, then
 
 
 #### More details:
+* [React Strict Mode](https://reactjs.org/docs/strict-mode.html)
 * [React 18 - Breaking Changes](https://github.com/facebook/react/blob/main/CHANGELOG.md#react-1)
 * [React 18 - Changelog](https://github.com/facebook/react/blob/main/CHANGELOG.md#1800-march-29-2022)
