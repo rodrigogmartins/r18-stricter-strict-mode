@@ -1,11 +1,13 @@
 import './App.css';
-import { CleanupUndoPage } from './cleanup-undo/CleanupUndoPage';
+import { RunCodeOnce } from './use-effect-strategies/RunCodeOnce';
+import { CleanupUndoPage } from './use-effect-strategies/CleanupUndoPage';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CleanupUndoPage></CleanupUndoPage>
+        <CleanupUndoPage />
+        <RunCodeOnce />
       </header>
     </div>
   );

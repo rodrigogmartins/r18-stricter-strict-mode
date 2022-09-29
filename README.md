@@ -10,16 +10,53 @@ React will automatically unmount and remount every component, whenever a compone
 
 ## How to handle?
 
-There are three possibilities to handle this behaviour using the useEffect cleanup, which are:
+There are two possibilities to handle this behaviour using the useEffect cleanup or useRef hook:
 
 
-### #1 - Using useEffect cleanup to undo what you do:
+### #1 - Using useEffect cleanup to undo what you did:
+
+```javascript
+useEffect(() => { 
+  let clicks = 0 
+
+  const handleButtonClick = () => {
+    document
+      .querySelector('#content')
+      .innerHTML += `Teste ${clicks} <br>`
+    clicks++
+  }
+
+  document
+    .querySelector('#button-to-click')
+    .addEventListener('click', handleButtonClick)
+  
+  return () => {
+    document
+      .querySelector('#button-to-click')
+      .removeEventListener('click', handleButtonClick)
+  }
+}, [])
+```
 
 
-### #2 - Using useEffect cleanup to ignore the first call's result:
+### #2 - Using useRef to run code once:
+```javascript
+const shouldGetData = useRef(true)
 
+useEffect(() => {
+  if (shouldGetData.current) {
+    shouldGetData.current = false
+    axios
+      .get('http://numbersapi.com/random')
+      .then(({ data }) => {
+        document
+          .querySelector('#content')
+          .innerHTML += `${data}<br><br>`
+      })
+  }
+}, [])
+```
 
-### #3 - Using useEffect cleanup to ignore the first call:
 
 ## Examples
 
